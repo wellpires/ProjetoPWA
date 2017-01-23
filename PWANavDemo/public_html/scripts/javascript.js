@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 window.onload = function () {
     document.getElementById("menuButton").onclick = function () {
         if (window.innerWidth > 600) {
@@ -18,9 +17,5 @@ window.onload = function () {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("content").style.marginLeft = "0";
     };
+    
 };
-
-
-
-
-
