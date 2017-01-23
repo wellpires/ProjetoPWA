@@ -8,7 +8,7 @@ window.onload = function () {
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./service-worker.js').then(function (registration) {
             console.log('Service Worker registered ', registration);
-        }).then(function (e) {
+        }).catch(function (e) {
             console.log('ERRO ', e);
         });
     }
