@@ -57,6 +57,8 @@ function alterarConteudoCentral(link, page) {
 }
 
 function esconderMenu() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("content").style.marginLeft = "0";
+    if(!window.innerWidth > 600){
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("content").style.marginLeft = "0";
+    }   
 }
