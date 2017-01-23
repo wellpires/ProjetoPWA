@@ -7,14 +7,14 @@ window.onload = function () {
     
     var menuButton = document.getElementById("menuButton");
     var mySidenav = document.getElementById("mySidenav");
-    var content = document.getElementById("content")   
+    var content = document.getElementById("content");
     
     menuButton.onclick = function (e) {
         e.stopImmediatePropagation();     
         
         if (window.innerWidth > 600) {
-            if(mySidenav.style.width == "250px"){
-                mySidenav.style.width = "0"
+            if(mySidenav.style.width === "250px"){
+                mySidenav.style.width = "0";
                 content.style.marginLeft = "0";
             } else {
                  mySidenav.style.width = "250px";
@@ -26,11 +26,10 @@ window.onload = function () {
 
     };
     content.onclick = function (e) {
-        if(e.currentTarget == this) {
+        if(e.currentTarget === this) {
             mySidenav.style.width = "0";
             content.style.marginLeft = "0";
-        }
-      
+        }      
     };
 
     $('#divCentral').load('main.html');
