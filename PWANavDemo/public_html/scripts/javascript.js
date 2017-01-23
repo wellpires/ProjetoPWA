@@ -4,20 +4,38 @@
  * and open the template in the editor.
  */
 window.onload = function () {
-    document.getElementById("menuButton").onclick = function () {
+    
+    var menuButton = document.getElementById("menuButton");
+    var mySidenav = document.getElementById("mySidenav");
+    var content = document.getElementById("content");
+    var closeButton = document.getElementById("closeButton");
+    
+    menuButton.onclick = function () {
         if (window.innerWidth > 600) {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("content").style.marginLeft = "250px";
+            mySidenav.style.width = "250px";
+            content.style.marginLeft = "250px";
         } else {
-            document.getElementById("mySidenav").style.width = "250px";
+            mySidenav.style.width = "250px";
         }
 
     };
-    document.getElementById("closeButton").onclick = function () {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("content").style.marginLeft = "0";
+    closeButton.onclick = function () {
+        mySidenav.style.width = "0";
+        content.style.marginLeft = "0";
     };
 
-    
-    
+    $('#divCentral').load('main.html');
+
+    alterarConteudoCentral('pwaTitle', 'main.html');
+    alterarConteudoCentral('linkHome', 'main.html');
+    alterarConteudoCentral('linkAbout', 'about.html');
+    alterarConteudoCentral('linkServices', 'services.html');
+    alterarConteudoCentral('linkContact', 'contact.html');
+
 };
+
+function alterarConteudoCentral(link, page) {
+    document.getElementById(link).addEventListener('click', function () {
+        $('#divCentral').load(page);
+    });
+}
