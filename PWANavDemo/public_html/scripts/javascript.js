@@ -17,5 +17,7 @@ window.onload = function () {
         document.getElementById("mySidenav").style.width = "0";
         document.getElementById("content").style.marginLeft = "0";
     };
+
+    
     
 };
