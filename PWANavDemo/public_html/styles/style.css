@@ -54,7 +54,8 @@ body {
 
 .header {
     width: 100%;
-    /*height: 56px;*/
+    position: fixed;
+    top: 0;
     color: #FFF;
     background: #A5BB0B;/**/    
     margin:0;
