@@ -7,21 +7,30 @@ window.onload = function () {
     
     var menuButton = document.getElementById("menuButton");
     var mySidenav = document.getElementById("mySidenav");
-    var content = document.getElementById("content");
-    var closeButton = document.getElementById("closeButton");
+    var content = document.getElementById("content")   
     
-    menuButton.onclick = function () {
+    menuButton.onclick = function (e) {
+        e.stopImmediatePropagation();     
+        
         if (window.innerWidth > 600) {
-            mySidenav.style.width = "250px";
-            content.style.marginLeft = "250px";
+            if(mySidenav.style.width == "250px"){
+                mySidenav.style.width = "0"
+                content.style.marginLeft = "0";
+            } else {
+                 mySidenav.style.width = "250px";
+                 content.style.marginLeft = "250px";
+            }           
         } else {
             mySidenav.style.width = "250px";
         }
 
     };
-    closeButton.onclick = function () {
-        mySidenav.style.width = "0";
-        content.style.marginLeft = "0";
+    content.onclick = function (e) {
+        if(e.currentTarget == this) {
+            mySidenav.style.width = "0";
+            content.style.marginLeft = "0";
+        }
+      
     };
 
     $('#divCentral').load('main.html');
@@ -29,8 +38,7 @@ window.onload = function () {
     alterarConteudoCentral('pwaTitle', 'main.html');
     alterarConteudoCentral('linkHome', 'main.html');
     alterarConteudoCentral('linkAbout', 'about.html');
-    alterarConteudoCentral('linkServices', 'services.html');
-    alterarConteudoCentral('linkContact', 'contact.html');
+    alterarConteudoCentral('linkServices', 'services.html');  
 
 };
 
